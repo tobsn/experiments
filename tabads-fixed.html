@@ -159,7 +159,7 @@
 	(new Image()).src = i;
 	$(function(){
 		var scrollstop = false;
-		$('.navbar-inner').prepend('<div id="tabads"></div><style>#tabads{height:80px;background-position:top center;display:none}</style>');
+		$('.navbar').prepend('<div id="tabads"></div><style>#tabads{height:80px;background-position:top center;display:none}</style>');
 		var tabads = $('#tabads');
 		tabads.css('background-image','url('+i+')');
 		$(document).on('scroll', function(e) {
