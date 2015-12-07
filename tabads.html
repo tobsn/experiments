@@ -157,22 +157,23 @@
 	];
 	var i = sad[Math.floor(Math.random() * sad.length)];
 	(new Image()).src = i;
-	$(function() {
+	$(function(){
 		var scrollstop = false;
-		$('body').prepend('<div id="tabads"></div><style>#tabads{height: 80px;background-position: top center;display:none}</style>');
+		$('body').prepend('<div id="tabads"></div><style>#tabads{height:80px;background-position:top center;display:none}</style>');
 		var tabads = $('#tabads');
-		tabads.css('background-image', 'url(' + i + ')');
-		$(document).on('scroll', function() {
+		tabads.css('background-image','url('+i+')');
+		$(document).on('scroll', function(e) {
 			var scroll = $(document).scrollTop();
 			console.log(scroll);
-			if (scroll > 200) {
+			if( scroll > 400 ) {
 				$(document).off('scroll');
 				show();
+				e.preventDefault();
 			}
 		});
-		function show() {
+		function show(){
 			tabads.show();
-			$(document).scrollTop($(document).scrollTop() + 80);
+			$(document).scrollTop( $(document).scrollTop()+80 );
 		}
 	});
 	</script>
