@@ -159,7 +159,7 @@
 	(new Image()).src = i;
 	$(function(){
 		var scrollstop = false;
-		$('.navbar').prepend('<div id="tabads"></div><style>#tabads{height:80px;background-position:top center;display:none}</style>');
+		$('.navbar-inner').prepend('<div id="tabads"></div><style>#tabads{height:80px;background-position:top center;display:none}</style>');
 		var tabads = $('#tabads');
 		tabads.css('background-image','url('+i+')');
 		$(document).on('scroll', function(e) {
@@ -172,9 +172,8 @@
 			}
 		});
 		function show(){
-			tabads.show();
+			tabads.slideDown();
 			$('body').css('padding-top',parseInt($('body').css('padding-top'))+80+'px');
-			$(document).scrollTop( $(document).scrollTop()+80 );
 		}
 	});
 	</script>
